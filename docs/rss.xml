@@ -1,2 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://Boss-You.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Boss-You.github.io</link></image><lastBuildDate>Sat, 04 Oct 2025 07:41:16 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://Boss-You.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Boss-You.github.io</link></image><lastBuildDate>Sat, 04 Oct 2025 16:40:16 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>2025.10.02 | 安装Anaconda、CUDA、pytorch、pycharm和环境配置，卸载CUDA、pytorch</title><link>https://Boss-You.github.io/post/2025.10.02%20-%20-an-zhuang-Anaconda%E3%80%81CUDA%E3%80%81pytorch%E3%80%81pycharm-he-huan-jing-pei-zhi-%EF%BC%8C-xie-zai-CUDA%E3%80%81pytorch.html</link><description># 目录
+- [一、软件安装和环境配置](#h1)
+  - [1.安装流程](#h11)
+  - [2.注意事项](#h12)
+    - [（1）注意CUDA和pytorch的版本](#h121)
+    - [（2）pycharm激活](#h122)
+    - [（3）是否使用镜像加速pytorch安装](#h123)
+- [二、CUDA和pytorch卸载](#h2)
+	- [1.CUDA卸载](#h21)
+	- [2.pytorch卸载](#h22)
+# 一、软件安装和环境配置&lt;a id='#h1'&gt;&lt;/a&gt;
+## 1.安装流程&lt;a id='#h11'&gt;&lt;/a&gt;
+这里引用知乎某个大佬写的帖子，讲的非常详细，按照流程安装基本就差不多了。</description><guid isPermaLink="true">https://Boss-You.github.io/post/2025.10.02%20-%20-an-zhuang-Anaconda%E3%80%81CUDA%E3%80%81pytorch%E3%80%81pycharm-he-huan-jing-pei-zhi-%EF%BC%8C-xie-zai-CUDA%E3%80%81pytorch.html</guid><pubDate>Sat, 04 Oct 2025 07:40:45 +0000</pubDate></item></channel></rss>

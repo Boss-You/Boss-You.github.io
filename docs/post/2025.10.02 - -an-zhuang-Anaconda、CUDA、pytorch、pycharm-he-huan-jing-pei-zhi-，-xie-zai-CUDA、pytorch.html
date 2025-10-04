@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 目录
+- [一、软件安装和环境配置](#h1)
+  - [1.安装流程](#h11)
+  - [2.注意事项](#h12)
+    - [（1）注意CUDA和pytorch的版本](#h121)
+    - [（2）pycharm激活](#h122)
+    - [（3）是否使用镜像加速pytorch安装](#h123)
+- [二、CUDA和pytorch卸载](#h2)
+	- [1.CUDA卸载](#h21)
+	- [2.pytorch卸载](#h22)
+# 一、软件安装和环境配置<a id='#h1'></a>
+## 1.安装流程<a id='#h11'></a>
+这里引用知乎某个大佬写的帖子，讲的非常详细，按照流程安装基本就差不多了。">
+<meta property="og:title" content="2025.10.02 | 安装Anaconda、CUDA、pytorch、pycharm和环境配置，卸载CUDA、pytorch">
+<meta property="og:description" content="# 目录
+- [一、软件安装和环境配置](#h1)
+  - [1.安装流程](#h11)
+  - [2.注意事项](#h12)
+    - [（1）注意CUDA和pytorch的版本](#h121)
+    - [（2）pycharm激活](#h122)
+    - [（3）是否使用镜像加速pytorch安装](#h123)
+- [二、CUDA和pytorch卸载](#h2)
+	- [1.CUDA卸载](#h21)
+	- [2.pytorch卸载](#h22)
+# 一、软件安装和环境配置<a id='#h1'></a>
+## 1.安装流程<a id='#h11'></a>
+这里引用知乎某个大佬写的帖子，讲的非常详细，按照流程安装基本就差不多了。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Boss-You.github.io/post/2025.10.02%20-%20-an-zhuang-Anaconda%E3%80%81CUDA%E3%80%81pytorch%E3%80%81pycharm-he-huan-jing-pei-zhi-%EF%BC%8C-xie-zai-CUDA%E3%80%81pytorch.html">
+<meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
+<title>2025.10.02 | 安装Anaconda、CUDA、pytorch、pycharm和环境配置，卸载CUDA、pytorch</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">2025.10.02 | 安装Anaconda、CUDA、pytorch、pycharm和环境配置，卸载CUDA、pytorch</h1>
+<div class="title-right">
+    <a href="https://Boss-You.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/Boss-You/Boss-You.github.io/issues/1" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>目录</h1>
+<ul>
+<li><a href="#h1">一、软件安装和环境配置</a>
+<ul>
+<li><a href="#h11">1.安装流程</a></li>
+<li><a href="#h12">2.注意事项</a>
+<ul>
+<li><a href="#h121">（1）注意CUDA和pytorch的版本</a></li>
+<li><a href="#h122">（2）pycharm激活</a></li>
+<li><a href="#h123">（3）是否使用镜像加速pytorch安装</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#h2">二、CUDA和pytorch卸载</a>
+<ul>
+<li><a href="#h21">1.CUDA卸载</a></li>
+<li><a href="#h22">2.pytorch卸载</a></li>
+</ul>
+</li>
+</ul>
+<h1>一、软件安装和环境配置<a id="user-content-#h1"></a></h1>
+<h2>1.安装流程<a id="user-content-#h11"></a></h2>
+<p>这里引用知乎某个大佬写的帖子，讲的非常详细，按照流程安装基本就差不多了。</p>
+<p><a href="https://zhuanlan.zhihu.com/p/1897228496805291428?_blank" rel="nofollow">【2025全网最新】PyTorch+Anaconda+CUDA一键安装保姆级教程（附安装包） - 知乎</a></p>
+<h2>2.注意事项<a id="user-content-#h12"></a></h2>
+<h3>（1）注意CUDA和pytorch的版本<a id="user-content-#h121"></a></h3>
+<p>CUDA和pytorch版本的选取需要与电脑的GPU相匹配，我电脑显卡是RTX5060，帖子里面的CUDA11.8已经不能满足我的需求，经过多次试验最终选择的版本是CUDA12.8以及Pytoch2.7.1，亲测可用。关于这两个版本的下载官网如下：</p>
+<p><a href="https://developer.nvidia.com/cuda-toolkit-archive?_blank" rel="nofollow">CUDA Toolkit Archive | NVIDIA Developer</a></p>
+<p><a href="https://pytorch.org/get-started/previous-versions/?_blank" rel="nofollow">Previous PyTorch Versions</a></p>
+<p>假如你的显卡和CUDA、pytorch不匹配的话，在使用GPU运行程序的时候会出现如下报错：</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/60048cd9-b809-4cd6-8f8f-cd801ba1030f"><img width="1827" height="201" alt="Image" src="https://github.com/user-attachments/assets/60048cd9-b809-4cd6-8f8f-cd801ba1030f" style="max-width: 100%; height: auto; max-height: 201px;"></a></p>
+<h3>（2）pycharm激活<a id="user-content-#h122"></a></h3>
+<p>上面知乎的帖子获取pycharm激活工具有点麻烦，这里引用另一位大佬的帖子，里面的百度网盘有激活工具，可以和帖子附的激活视频一起食用。</p>
+<p><a href="https://www.bilibili.com/opus/989221862712016917?spm_id_from=333.1391.0.0?_blank" rel="nofollow">PyCharm2024.1.x最新版本激活到2099年脚本激活方法图文使用教程 - 哔哩哔哩</a></p>
+<p>激活成功之后，继续看我最前面引用的知乎帖子给的网盘附件里的pycharm视频教程，学会如何配置好相应的环境以便以后编程之用（因为按照知乎大佬教程我们把CUDA安装在了一个叫pytorch_env的单独虚拟环境中，新建一个project的时候有个地方需要设置一下）。</p>
+<h3>（3）是否使用镜像加速pytorch安装<a id="user-content-#h123"></a></h3>
+<p>虽说使用镜像可以加速pytorch安装速度，但我根据教程一用镜像就报错，最后没办法直接连接官网下载了，发现下载速度没有想象中那么慢，十几二十分钟也下好了。以我自己安装的版本为例，具体步骤如下：</p>
+<ul>
+<li>
+<p>打开 Anaconda Prompt</p>
+</li>
+<li>
+<p>在命令行输入 <code class="notranslate">conda activate pytorch_env</code>进入pytorch_env虚拟环境</p>
+</li>
+<li>
+<p>输入<code class="notranslate">pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu128</code>开始下载</p>
+</li>
+</ul>
+<p>这段代码怎么来的呢？在我前面给的pytroch官网中，根据你的CUDA版本选择的，如图：</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/9e5bae35-6ce0-4bc1-86d2-16a973e3a377"><img width="1467" height="1032" alt="Image" src="https://github.com/user-attachments/assets/9e5bae35-6ce0-4bc1-86d2-16a973e3a377" style="max-width: 100%; height: auto; max-height: 1032px;"></a></p>
+<h1>二、CUDA和pytorch卸载<a id="user-content-#h2"></a></h1>
+<p>假如不幸下载错了版本，现在想要删掉旧版本的CUDA和pytorch要怎么办呢？</p>
+<h2>1.CUDA卸载<a id="user-content-#h21"></a></h2>
+<p>这里再引用一个知乎帖子，只看卸载部分就可以。</p>
+<p><a href="https://zhuanlan.zhihu.com/p/23071389812?_blank" rel="nofollow">超详细 CUDA 安装与卸载教程（图文教程） - 知乎</a></p>
+<p>我把具体步骤和一些要注意的点提炼出来，配合这篇帖子的图文一起看：</p>
+<ul>
+<li>
+<p>通过  控制面板 → 程序 → 卸载程序  进入卸载程序界面，删掉标题与cuda相关的所有项目（一般标题都带有你下载错的cuda的版本号）</p>
+</li>
+<li>
+<p>删除 NVIDIA GPU Computing Toolkit 文件夹，一般这个文件夹旁边还有个叫 NVIDIA Corporation 的文件夹，这个可以不用删</p>
+</li>
+<li>
+<p>删掉环境变量（有的会自动删，没有就要手动删掉），此电脑（右键）→ 属性 → 高级系统设置 → 环境变量 → 下面框框里找到path，点编辑 → 删掉cuda相关的两个条目</p>
+</li>
+</ul>
+<p>这样就删除好了。</p>
+<h2>2.pytorch卸载<a id="user-content-#h22"></a></h2>
+<p>删除pytorch可以直接通过Anaconda Prompt命令行删除，比较方便，步骤如下：</p>
+<ul>
+<li>
+<p>打开 Anaconda Prompt</p>
+</li>
+<li>
+<p>在命令行输入 <code class="notranslate">conda activate pytorch_env</code>进入pytorch_env虚拟环境</p>
+</li>
+<li>
+<p>输入<code class="notranslate">conda uninstall pytorch torchvision torchaudio</code>开始卸载</p>
+</li>
+</ul>
+<p>等待卸载完成即可。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://Boss-You.github.io">Blog Title</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","Boss-You/Boss-You.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
